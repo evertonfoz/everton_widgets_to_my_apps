@@ -70,7 +70,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_mobx:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: flutter_mobx
       url: "https://pub.dartlang.org"
@@ -103,7 +103,7 @@ packages:
     source: hosted
     version: "1.3.0"
   mobx:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: mobx
       url: "https://pub.dartlang.org"

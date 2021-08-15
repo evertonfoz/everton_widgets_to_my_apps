@@ -4,19 +4,20 @@ During my process of studying and investigating Flutter, I did several tests, cr
 
 ## Widgets presentes no pacote
 
-1. **AppBarECA**
+1. **InProcessingWidget**
+
+   É um StatelessWidget, que recebe, em seu construtor, 1 argumento, chamado **urlImage** que será a imagem renderizada pelo componente. Caso nenhuma URL seja enviada, o widget realizar a rendererização de sua imagem padrão, veja-a na sequência.
+
+   ![InProcessingWidget](URL da imagem)
+
+   - List<Widget> actions;
+   - double elevation;
+   - Widget? leading;
+
+2. **AppBarECA**
 
    É um StatelessWidget, que recebe, em seu construtor, três argumentos:
 
    - List<Widget> actions;
    - double elevation;
    - Widget? leading;
-
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
