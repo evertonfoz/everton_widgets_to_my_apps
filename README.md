@@ -4,7 +4,7 @@ During my process of studying and investigating Flutter, I did several tests, cr
 
 ## Widgets presentes no pacote
 
-1. _AppBarECA_
+1. **AppBarECA**
 
    É um StatelessWidget, que recebe, em seu construtor, três argumentos:
 
