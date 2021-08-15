@@ -4,13 +4,13 @@ During my process of studying and investigating Flutter, I did several tests, cr
 
 ## Widgets presentes no pacote
 
-1. `AppBarECA`
+1. _AppBarECA_
 
    É um StatelessWidget, que recebe, em seu construtor, três argumentos:
 
-   . List<Widget> actions;
-   . double elevation;
-   . Widget? leading;
+   - List<Widget> actions;
+   - double elevation;
+   - Widget? leading;
 
 This project is a starting point for a Dart
 [package](https://flutter.dev/developing-packages/),
