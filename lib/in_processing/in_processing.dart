@@ -15,7 +15,10 @@ class InProcessingIndicatorECA extends StatelessWidget {
       builder: (_) {
         if (GetIt.I.get<InProcessingStore>().isInProcessing) {
           return Center(
-            child: Image.asset(urlImage),
+            child: Image.asset(
+              urlImage,
+              package: 'everton_widgets_to_my_apps',
+            ),
           );
         }
         return Container();

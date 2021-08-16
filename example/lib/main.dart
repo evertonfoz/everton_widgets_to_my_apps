@@ -1,16 +1,15 @@
 import 'package:everton_widgets_to_my_apps/in_processing/mobx_store/in_processing_store.dart';
-import 'package:example/appbar/appbar.dart';
+import 'package:example/inprocessing/inprocessing.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
 void main() {
   GetIt.I.registerSingleton<InProcessingStore>(InProcessingStore());
 
-  runApp(MyApp());
+  runApp(TestingWidgetsApp());
 }
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class TestingWidgetsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,7 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: AppBarPage(),
+      home: InProcessingPage(),
     );
   }
 }
