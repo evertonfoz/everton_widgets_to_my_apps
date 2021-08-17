@@ -4,10 +4,9 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
 
 class InProcessingIndicatorECA extends StatelessWidget {
-  final String urlImage;
+  final String? urlImage;
 
-  const InProcessingIndicatorECA(
-      {this.urlImage = 'assets/images/gifs/circular_indicator.gif'});
+  const InProcessingIndicatorECA({this.urlImage});
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +15,8 @@ class InProcessingIndicatorECA extends StatelessWidget {
         if (GetIt.I.get<InProcessingStore>().isInProcessing) {
           return Center(
             child: Image.asset(
-              urlImage,
-              package: 'everton_widgets_to_my_apps',
+              urlImage ?? 'assets/images/gifs/circular_indicator.gif',
+              package: urlImage == null ? 'everton_widgets_to_my_apps' : null,
             ),
           );
         }

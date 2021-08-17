@@ -1,7 +1,6 @@
 import 'package:everton_widgets_to_my_apps/in_processing/in_processing.dart';
 import 'package:everton_widgets_to_my_apps/in_processing/mobx_store/in_processing_store.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
 
 class InProcessingPage extends StatelessWidget {
@@ -13,7 +12,9 @@ class InProcessingPage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          InProcessingIndicatorECA(),
+          InProcessingIndicatorECA(
+            urlImage: 'assets/images/circular_indicator.gif',
+          ),
           Center(
             child: ElevatedButton(
               onPressed: () => GetIt.I
