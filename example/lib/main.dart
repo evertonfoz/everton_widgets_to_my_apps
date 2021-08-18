@@ -1,7 +1,7 @@
 import 'package:everton_widgets_to_my_apps/in_processing/mobx_store/in_processing_store.dart';
-import 'package:example/brand/brand_title.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'checkbox/checkbox.dart';
 
 void main() {
   GetIt.I.registerSingleton<InProcessingStore>(InProcessingStore());
@@ -17,7 +17,7 @@ class TestingWidgetsApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: BrandTitlePage(),
+      home: CheckBoxPage(),
     );
   }
 }

@@ -6,18 +6,20 @@ class ElevatedButtonECA extends StatelessWidget {
   final double borderWidth;
   final VoidCallback? onPressed;
   final Widget? icon;
+  final Color? iconColor;
   final double width;
 
   ElevatedButtonECA({
     this.text,
-    this.textColor: Colors.red,
-    this.buttonColor: Colors.white,
-    this.borderColor: Colors.white,
+    this.textColor: Colors.white,
+    this.buttonColor: Colors.blue,
+    this.borderColor: Colors.indigo,
     this.borderWidth: 0,
     this.icon,
+    this.iconColor: Colors.white,
     required this.onPressed,
     this.width: double.infinity,
-  });
+  }) : assert(text != null || icon != null);
 
   @override
   Widget build(BuildContext context) {
