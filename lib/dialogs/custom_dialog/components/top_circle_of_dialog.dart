@@ -1,11 +1,11 @@
-import 'package:eogas/core/presentation/components/dialogs/custom_dialog/custom_dialog_information.dart';
+import 'package:everton_widgets_to_my_apps/dialogs/custom_dialog/custom_dialog_information.dart';
 import 'package:flutter/material.dart';
 
-class TopCircleOfDialogWidget extends StatelessWidget {
-  final CustomDialogTypes customDialogType;
+class TopCircleOfDialogECA extends StatelessWidget {
+  final CustomDialogTypesECA customDialogType;
   final String? urlToImage;
 
-  const TopCircleOfDialogWidget(
+  const TopCircleOfDialogECA(
       {required this.customDialogType, required this.urlToImage});
 
   @override
@@ -13,11 +13,11 @@ class TopCircleOfDialogWidget extends StatelessWidget {
     Color avatarColor = _defineBackGroundAvatarColor();
 
     return Positioned(
-      left: Consts.padding,
-      right: Consts.padding,
+      left: ConstsECA.padding,
+      right: ConstsECA.padding,
       child: CircleAvatar(
         backgroundColor: avatarColor,
-        radius: Consts.avatarRadius,
+        radius: ConstsECA.avatarRadius,
         child: Image.asset(
           urlToImage!,
           fit: BoxFit.fitWidth,
@@ -28,13 +28,13 @@ class TopCircleOfDialogWidget extends StatelessWidget {
   }
 
   _defineBackGroundAvatarColor() {
-    if (customDialogType == CustomDialogTypes.Success)
+    if (customDialogType == CustomDialogTypesECA.Success)
       return Colors.green[900];
-    else if (customDialogType == CustomDialogTypes.Fail)
+    else if (customDialogType == CustomDialogTypesECA.Fail)
       return Colors.orange.shade800;
-    else if (customDialogType == CustomDialogTypes.Warning)
+    else if (customDialogType == CustomDialogTypesECA.Warning)
       return Colors.yellow[500];
-    else if (customDialogType == CustomDialogTypes.Question)
+    else if (customDialogType == CustomDialogTypesECA.Question)
       return Colors.teal[500];
 
     return Colors.blueAccent;

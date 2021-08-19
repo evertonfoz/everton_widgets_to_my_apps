@@ -1,13 +1,14 @@
-import 'package:eogas/core/presentation/components/dialogs/custom_dialog/components/custom_dialog_buttons.dart';
-import 'package:eogas/core/presentation/components/dialogs/custom_dialog/components/error_to_copy_to_team.dart';
-import 'package:eogas/core/presentation/components/dialogs/custom_dialog/custom_dialog_information.dart';
+import 'package:everton_widgets_to_my_apps/dialogs/custom_dialog/components/error_to_copy_to_team.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../custom_dialog_information.dart';
+import 'custom_dialog_buttons.dart';
+
 // ignore: must_be_immutable
-class InnerDialogContentWidget extends StatelessWidget {
+class InnerDialogContentECA extends StatelessWidget {
   final String title;
-  final CustomDialogTypes customDialogType;
+  final CustomDialogTypesECA customDialogType;
   final String? errorToCopy;
   String? description;
   String? urlToTopImage;
@@ -23,7 +24,7 @@ class InnerDialogContentWidget extends StatelessWidget {
   final String? rigthButtonText;
   final String? centerButtonText;
 
-  InnerDialogContentWidget({
+  InnerDialogContentECA({
     required this.title,
     required this.customDialogType,
     this.description,
@@ -44,16 +45,16 @@ class InnerDialogContentWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(
-        top: Consts.avatarRadius + Consts.padding,
-        bottom: Consts.padding,
-        left: Consts.padding,
-        right: Consts.padding,
+        top: ConstsECA.avatarRadius + ConstsECA.padding,
+        bottom: ConstsECA.padding,
+        left: ConstsECA.padding,
+        right: ConstsECA.padding,
       ),
-      margin: EdgeInsets.only(top: Consts.avatarRadius),
+      margin: EdgeInsets.only(top: ConstsECA.avatarRadius),
       decoration: new BoxDecoration(
         color: Colors.white,
         shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.circular(Consts.padding),
+        borderRadius: BorderRadius.circular(ConstsECA.padding),
         boxShadow: [
           BoxShadow(
             color: Colors.black26,
@@ -81,7 +82,7 @@ class InnerDialogContentWidget extends StatelessWidget {
         _titleDescription(
             message: description, fontSize: 16, textAlign: TextAlign.center),
         SizedBox(height: 24),
-        CustomDialogButtonsWidget(
+        CustomDialogButtonsECA(
           customDialogType: customDialogType,
           onRigthButtonPressed: onRigthButtonPressed,
           rigthButtonText: rigthButtonText,
@@ -98,7 +99,7 @@ class InnerDialogContentWidget extends StatelessWidget {
             color: Colors.black,
           ),
         ),
-        ErrorToCopyToTeamWidget(errorToCopy: errorToCopy),
+        ErrorToCopyToTeamECA(errorToCopy: errorToCopy),
       ],
     );
   }

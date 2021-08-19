@@ -4,18 +4,20 @@ import 'package:flutter/material.dart';
 
 import '../custom_dialog_information.dart';
 
-class CustomDialogButtonsWidget extends StatelessWidget {
+class CustomDialogButtonsECA extends StatelessWidget {
   final VoidCallback? onLeftButtonPressed;
   final Function? onRigthButtonPressed;
   final VoidCallback? onCenterButtonPressed;
-  final CustomDialogTypes customDialogType;
+  final CustomDialogTypesECA customDialogType;
   final Color? rigthButtonColor;
   final Color? leftButtonColor;
   final String? leftButtonText;
   final String? rigthButtonText;
   final String? centerButtonText;
+  final Color? centerButtonColor;
+  final Color? centerButtonTextColor;
 
-  CustomDialogButtonsWidget({
+  CustomDialogButtonsECA({
     this.onLeftButtonPressed,
     required this.customDialogType,
     this.leftButtonColor,
@@ -25,7 +27,33 @@ class CustomDialogButtonsWidget extends StatelessWidget {
     this.rigthButtonText,
     this.centerButtonText,
     this.onCenterButtonPressed,
-  });
+    this.centerButtonColor,
+    this.centerButtonTextColor,
+  }) {
+    assert(_noButtonsReceived());
+  }
+
+  bool _noButtonsReceived() {
+    return (leftButtonColor == null &&
+        rigthButtonColor == null &&
+        leftButtonText == null &&
+        onRigthButtonPressed == null &&
+        rigthButtonText == null);
+    //   (centerButtonText != null ||
+    //                 centerButtonText != null ||
+    //                 onCenterButtonPressed != null ||
+    //                 centerButtonTextColor != null) &&
+    //             (!(leftButtonColor != null ||
+    //                     rigthButtonColor != null ||
+    //                     leftButtonText != null ||
+    //                     onRigthButtonPressed != null ||
+    //                     rigthButtonText != null) ||
+    //                 (leftButtonColor == null ||
+    //                     rigthButtonColor == null ||
+    //                     leftButtonText == null ||
+    //                     onRigthButtonPressed == null ||
+    //                     rigthButtonText == null)),
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -70,8 +98,8 @@ class CustomDialogButtonsWidget extends StatelessWidget {
             constraints: BoxConstraints.tightFor(
                 width: MediaQuery.of(context).size.width * 0.6, height: 48),
             child: ElevatedButtonECA(
-              buttonColor: kSecondaryColor,
-              textColor: kPrimaryColor,
+              buttonColor: centerButtonColor ?? Colors.blue,
+              textColor: centerButtonTextColor ?? Colors.white,
               text: centerButtonText,
               onPressed: () {
                 if (onCenterButtonPressed == null)
@@ -91,7 +119,7 @@ class CustomDialogButtonsWidget extends StatelessWidget {
   _rightButton(BuildContext context) {
     return Visibility(
       visible: this.rigthButtonText != null,
-      child: DefaultTextButton(
+      child: TextButtonECA(
         textColor: this.leftButtonColor ?? _rightButtonColor(),
         text: rigthButtonText ?? 'OK',
         onPressed: () {
@@ -107,22 +135,22 @@ class CustomDialogButtonsWidget extends StatelessWidget {
   }
 
   _rightButtonColor() {
-    if (customDialogType == CustomDialogTypes.Success)
+    if (customDialogType == CustomDialogTypesECA.Success)
       return Colors.green[400];
-    else if (customDialogType == CustomDialogTypes.Fail)
+    else if (customDialogType == CustomDialogTypesECA.Fail)
       return Colors.red[900];
-    else if (customDialogType == CustomDialogTypes.Warning)
+    else if (customDialogType == CustomDialogTypesECA.Warning)
       return Colors.yellow[400];
-    else if (customDialogType == CustomDialogTypes.Question)
+    else if (customDialogType == CustomDialogTypesECA.Question)
       return Colors.teal[500];
   }
 
   _leftButtonColor() {
-    if (customDialogType == CustomDialogTypes.Success)
+    if (customDialogType == CustomDialogTypesECA.Success)
       return Colors.green[300];
-    else if (customDialogType == CustomDialogTypes.Fail)
+    else if (customDialogType == CustomDialogTypesECA.Fail)
       return Colors.red[400];
-    else if (customDialogType == CustomDialogTypes.Question)
+    else if (customDialogType == CustomDialogTypesECA.Question)
       return Colors.teal[300];
   }
 }

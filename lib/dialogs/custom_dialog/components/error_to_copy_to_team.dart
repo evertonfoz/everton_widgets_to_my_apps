@@ -1,12 +1,12 @@
 import 'package:clipboard/clipboard.dart';
-import 'package:eogas/core/presentation/components/snackbar/snackbar.dart';
+import 'package:everton_widgets_to_my_apps/snackbar/snackbar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ErrorToCopyToTeamWidget extends StatelessWidget {
+class ErrorToCopyToTeamECA extends StatelessWidget {
   final String? errorToCopy;
 
-  const ErrorToCopyToTeamWidget({required this.errorToCopy});
+  const ErrorToCopyToTeamECA({required this.errorToCopy});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class ErrorToCopyToTeamWidget extends StatelessWidget {
           ),
         ),
         onTap: () => FlutterClipboard.copy(errorToCopy!).then(
-          (value) => showBottomSnackBar(
+          (value) => showBottomSnackBarECA(
               context: context,
               durationSeconds: 3,
               title: 'Mensagem copiada.',

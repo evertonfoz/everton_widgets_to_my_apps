@@ -1,18 +1,19 @@
-import 'package:eogas/core/presentation/components/dialogs/custom_dialog/components/inner_dialog_content.dart';
-import 'package:eogas/core/presentation/components/dialogs/custom_dialog/components/top_circle_of_dialog.dart';
+import 'package:everton_widgets_to_my_apps/dialogs/custom_dialog/components/inner_dialog_content.dart';
 import 'package:flutter/material.dart';
 
-class Consts {
-  Consts._();
+import 'components/top_circle_of_dialog.dart';
+
+class ConstsECA {
+  ConstsECA._();
 
   static const double padding = 16.0;
   static const double avatarRadius = 43.0;
 }
 
-enum CustomDialogTypes { Success, Fail, Warning, Question }
+enum CustomDialogTypesECA { Success, Fail, Warning, Question }
 
 // ignore: must_be_immutable
-class CustomDialogInformation extends StatelessWidget {
+class CustomDialogInformationECA extends StatelessWidget {
   final String? leftButtonText,
       urlToTopImage,
       errorToCopy,
@@ -21,16 +22,16 @@ class CustomDialogInformation extends StatelessWidget {
   final Color? leftButtonColor;
   final String title;
   final Color? rightButtonColor;
-  final CustomDialogTypes customDialogType;
+  final CustomDialogTypesECA customDialogType;
   final VoidCallback? onLeftButtonPressed;
   final Function? onRigthButtonPressed;
   final VoidCallback? onCenterButtonPressed;
   String? description, centerButtonText;
 
-  CustomDialogInformation({
+  CustomDialogInformationECA({
     required this.title,
     this.rigthButtonText = 'OK',
-    this.customDialogType = CustomDialogTypes.Success,
+    this.customDialogType = CustomDialogTypesECA.Success,
     this.rightButtonColor = Colors.lightBlueAccent,
     this.leftButtonText,
     this.leftButtonColor,
@@ -48,7 +49,7 @@ class CustomDialogInformation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Dialog(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(Consts.padding),
+        borderRadius: BorderRadius.circular(ConstsECA.padding),
       ),
       elevation: 0.0,
       backgroundColor: Colors.transparent,
@@ -59,7 +60,7 @@ class CustomDialogInformation extends StatelessWidget {
   _dialogContent(BuildContext context) {
     return Stack(
       children: <Widget>[
-        InnerDialogContentWidget(
+        InnerDialogContentECA(
           title: title,
           description: description ?? '',
           customDialogType: customDialogType,
@@ -76,7 +77,7 @@ class CustomDialogInformation extends StatelessWidget {
         ),
         Visibility(
           visible: urlToTopImage != null,
-          child: TopCircleOfDialogWidget(
+          child: TopCircleOfDialogECA(
             customDialogType: customDialogType,
             urlToImage: urlToTopImage,
           ),

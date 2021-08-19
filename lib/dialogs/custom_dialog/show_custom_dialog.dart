@@ -1,14 +1,14 @@
-import 'package:eogas/core/presentation/components/dialogs/custom_dialog/custom_dialog_information.dart';
+import 'package:everton_widgets_to_my_apps/dialogs/custom_dialog/custom_dialog_information.dart';
 import 'package:flutter/material.dart';
 
-showCustomDialog({
+showCustomDialogECA({
   required String title,
   required BuildContext context,
   String? description,
   String? urlToCircleImage,
   String? urlToInnerImage,
   String? errorToCopy,
-  CustomDialogTypes? customDialogType,
+  CustomDialogTypesECA? customDialogType,
   String? leftButtonText,
   String? rigthButtonText,
   String? centerButtonText,
@@ -26,11 +26,11 @@ showCustomDialog({
   showDialog(
     barrierDismissible: false,
     context: context,
-    builder: (BuildContext context) => CustomDialogInformation(
+    builder: (BuildContext context) => CustomDialogInformationECA(
       title: title,
       description: description,
       urlToTopImage: urlToCircleImage,
-      customDialogType: customDialogType ?? CustomDialogTypes.Success,
+      customDialogType: customDialogType ?? CustomDialogTypesECA.Success,
       leftButtonText: leftButtonText,
       rigthButtonText: rigthButtonText,
       onLeftButtonPressed: onLeftButtonPressed,
