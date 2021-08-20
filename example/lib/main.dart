@@ -1,5 +1,6 @@
 import 'package:everton_widgets_to_my_apps/in_processing/mobx_store/in_processing_store.dart';
-import 'package:example/dialogs/dialogs.dart';
+import 'package:example/inprocessing/inprocessing.dart';
+import 'package:example/snackbar/snackbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
@@ -17,7 +18,7 @@ class TestingWidgetsApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: DialogsPage(),
+      home: InProcessingPage(),
     );
   }
 }

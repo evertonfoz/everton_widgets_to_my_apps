@@ -13,8 +13,8 @@ class InProcessingPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           InProcessingIndicatorECA(
-            urlImage: 'assets/images/circular_indicator.gif',
-          ),
+              // urlImage: 'assets/images/circular_indicator.gif',
+              ),
           Center(
             child: ElevatedButton(
               onPressed: () => GetIt.I
@@ -22,7 +22,7 @@ class InProcessingPage extends StatelessWidget {
                   .registerIsInProcessing(
                       !GetIt.I.get<InProcessingStore>().isInProcessing),
               child: Text(
-                'Processar',
+                'Process',
                 style: TextStyle(color: Colors.black),
               ),
             ),

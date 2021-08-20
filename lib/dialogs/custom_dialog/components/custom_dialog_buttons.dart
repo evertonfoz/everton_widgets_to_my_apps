@@ -33,12 +33,13 @@ class CustomDialogButtonsECA extends StatelessWidget {
     assert(_noButtonsReceived());
   }
 
+  /// This ensures that only the right button with the text 'OK' is displayed.
   bool _noButtonsReceived() {
     return (leftButtonColor == null &&
-        rigthButtonColor == null &&
         leftButtonText == null &&
         onRigthButtonPressed == null &&
-        rigthButtonText == null);
+        rigthButtonText == null &&
+        onLeftButtonPressed == null);
     //   (centerButtonText != null ||
     //                 centerButtonText != null ||
     //                 onCenterButtonPressed != null ||
@@ -70,9 +71,8 @@ class CustomDialogButtonsECA extends StatelessWidget {
   }
 
   _leftButton() {
-    return Visibility(
-      visible: this.onLeftButtonPressed != null,
-      child: Column(
+    if (this.centerButtonText == null && this.onLeftButtonPressed != null) {
+      return Column(
         children: [
           TextButtonECA(
             textColor: this.leftButtonColor ?? _leftButtonColor(),
@@ -84,14 +84,15 @@ class CustomDialogButtonsECA extends StatelessWidget {
             width: 10,
           )
         ],
-      ),
-    );
+      );
+    } else {
+      return Container();
+    }
   }
 
   _centerButton(BuildContext context) {
-    return Visibility(
-      visible: this.centerButtonText != null,
-      child: Center(
+    if (this.centerButtonText != null) {
+      return Center(
         child: Padding(
           padding: const EdgeInsets.only(bottom: 28.0),
           child: ConstrainedBox(
@@ -112,15 +113,16 @@ class CustomDialogButtonsECA extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
+      );
+    } else {
+      return Container();
+    }
   }
 
   _rightButton(BuildContext context) {
-    return Visibility(
-      visible: this.rigthButtonText != null,
-      child: TextButtonECA(
-        textColor: this.leftButtonColor ?? _rightButtonColor(),
+    if (this.centerButtonText == null) {
+      return TextButtonECA(
+        textColor: this.rigthButtonColor ?? _rightButtonColor(),
         text: rigthButtonText ?? 'OK',
         onPressed: () {
           if (onRigthButtonPressed == null)
@@ -130,8 +132,10 @@ class CustomDialogButtonsECA extends StatelessWidget {
             Navigator.of(context).pop();
           }
         },
-      ),
-    );
+      );
+    } else {
+      return Container();
+    }
   }
 
   _rightButtonColor() {

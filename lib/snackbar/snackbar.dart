@@ -7,13 +7,11 @@ void showBottomSnackBarECA({
   EdgeInsets margin = EdgeInsets.zero,
   required BuildContext context,
   int durationSeconds = 2,
-  String? title,
-  String? content,
+  required String title,
+  required String content,
   Color? borderColor,
   Color? textColor,
 }) {
-  assert(title != null || content != null,
-      'É preciso informar o título ou conteúdo');
   showFlash(
     context: context,
     // persistent: persistent,
@@ -37,22 +35,16 @@ void showBottomSnackBarECA({
           style: GoogleFonts.poppins(color: textColor ?? Colors.white),
           child: FlashBar(
             padding: EdgeInsets.all(25),
-            title: Visibility(
-              visible: title != null,
-              child: Text(
-                title ?? '',
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                ),
+            title: Text(
+              title,
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
               ),
             ),
-            content: Visibility(
-              visible: content != null,
-              child: Text(
-                content ?? '',
-                style: TextStyle(fontSize: 20),
-              ),
+            content: Text(
+              content,
+              style: TextStyle(fontSize: 20),
             ),
             indicatorColor: Colors.red,
             icon: Icon(
